@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var colorizedView: UIView!
     
     @IBOutlet weak var redScaleValue: UILabel!
@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var redScaleController: UISlider!
     @IBOutlet weak var greenScaleController: UISlider!
     @IBOutlet weak var blueScaleController: UISlider!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,20 +35,19 @@ class ViewController: UIViewController {
         greenScaleValue.text = String(greenScaleController.value)
         greenScaleValue.adjustsFontSizeToFitWidth = false
         greenScaleController.setValue(greenScaleController.value, animated: true)
-       
+        
         blueScaleController.minimumValue = 0
         blueScaleController.maximumValue = 1
         blueScaleValue.text = String(blueScaleController.value)
         blueScaleValue.adjustsFontSizeToFitWidth = false
         blueScaleController.setValue(blueScaleController.value, animated: true)
-}
-
+    }
     
     @IBAction func redColorController(_ sender: UISlider) {
-
+        
         redScaleValue.text = String(redScaleController.value)
         
-         colorizedView.backgroundColor = UIColor(
+        colorizedView.backgroundColor = UIColor(
             red: CGFloat(redScaleController.value),
             green: CGFloat(greenScaleController.value),
             blue: CGFloat(blueScaleController.value),
@@ -60,7 +58,7 @@ class ViewController: UIViewController {
     @IBAction func greenColorController(_ sender: UISlider) {
         
         greenScaleValue.text = String(greenScaleController.value)
-    
+        
         colorizedView.backgroundColor = UIColor(
             red: CGFloat(redScaleController.value),
             green: CGFloat(greenScaleController.value),
